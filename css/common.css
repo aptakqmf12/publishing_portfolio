@@ -1,0 +1,29 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+.flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrap {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+/*# sourceMappingURL=common.css.map */

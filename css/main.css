@@ -1,0 +1,253 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  overflow: hidden;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+.flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrap {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+.loading {
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loading .load {
+  width: 50%;
+  height: 100vh;
+  background-color: black;
+}
+
+.loading .left {
+  -webkit-animation: swipe-left .5s 1s ease forwards;
+          animation: swipe-left .5s 1s ease forwards;
+}
+
+.loading .right {
+  -webkit-animation: swipe-right .5s 1s ease forwards;
+          animation: swipe-right .5s 1s ease forwards;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1;
+  width: 5px;
+  height: 100vh;
+  background-color: white;
+  -webkit-animation: center-bar .5s ease forwards;
+          animation: center-bar .5s ease forwards;
+}
+
+@-webkit-keyframes center-bar {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100vh;
+  }
+}
+
+@keyframes center-bar {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100vh;
+  }
+}
+
+@-webkit-keyframes swipe-left {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes swipe-left {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes swipe-right {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes swipe-right {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+header .header__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 36px;
+  background-color: #234502;
+}
+
+header .header__top .wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header .header__top .wrap .header__top--login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: white;
+}
+
+header .header__top .wrap .header__top--login li {
+  margin-left: 10px;
+}
+
+header nav {
+  position: relative;
+  background-color: red;
+}
+
+header nav h1.logo {
+  width: 171px;
+  height: 42px;
+  background: url("../images/logo_w.png") no-repeat;
+}
+
+header nav h1.logo a {
+  display: block;
+}
+
+header nav h1.logo a .ir__txt {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  height: 1px;
+  overflow: hidden;
+}
+
+header nav ul.header__nav > li > a {
+  color: yellow;
+}
+
+header nav ul.header__nav > li ul.header__nav--sub {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background-color: gray;
+}
+
+header nav ul.header__nav > li ul.header__nav--sub > li > a {
+  color: blue;
+}
+/*# sourceMappingURL=main.css.map */

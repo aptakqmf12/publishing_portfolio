@@ -35,8 +35,8 @@ header{
         }
         
     }
-    nav{ position:relative;   background-color:red; 
-        h1.logo{ width:171px; height:42px; background:url("../images/logo_w.png") no-repeat;
+    nav{ position:relative; background-color: $gray02;  border-bottom: 1px $gray02 solid; padding:10px 0;
+        h1.logo{ min-width:171px; height:42px; background:url("../images/logo_w.png") no-repeat;
             a{ display: block; 
                 .ir__txt{  position:absolute;  left:-9999px; top:auto; height:1px; overflow:hidden; }
             }
@@ -44,16 +44,20 @@ header{
         ul.header__nav{
             // 1 depth
             > li{  
-                > a{ color:yellow;}
-                ul.header__nav--sub{ position:absolute; left:0; top:100%; width:100%; background-color:gray;
-                    // 2 depth
-                    > li { 
-                        > a{ color:blue; }
-                        
-                        ul{
-                            // 3 depth
-                            > li{
-                                > a{}
+                > a{ }
+                .header__fullSub{  position:absolute; left:0; top:100%; width:100%;  background-color:white; border-bottom:1px $gray02 solid; 
+                    .wrap{ display:flex; justify-content: flex-start; border-left:1px $gray01 solid; border-right:1px $gray01 solid; padding:50px 20px;
+                        ul.header__sub{ width:14%;
+                            // 2 depth
+                            > li { 
+                                > a{ color:blue; font-size:1.8rem; }
+                                
+                                ul{ margin-top:10px;
+                                    // 3 depth
+                                    > li{
+                                        > a{}
+                                    }
+                                }
                             }
                         }
                     }

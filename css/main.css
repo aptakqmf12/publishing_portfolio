@@ -16,146 +16,227 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
 body {
   line-height: 1;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 ol, ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none; }
+  content: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 a {
   text-decoration: none;
-  color: black; }
+  color: inherit;
+}
 
 html {
-  font-size: 10px; }
+  font-size: 10px;
+}
 
 body {
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+}
 
 .flex-between {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+}
 
 .wrap {
   width: 1280px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .hide {
-  display: none; }
+  display: none;
+}
 
 .loading {
   position: absolute;
   overflow: hidden;
   width: 100vw;
-  height: 100vh; }
-  .loading .load {
-    width: 50%;
-    height: 100vh;
-    background-color: black; }
-  .loading .left {
-    animation: swipe-left .5s 1s ease forwards; }
-  .loading .right {
-    animation: swipe-right .5s 1s ease forwards; }
-  .loading::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    z-index: 1;
-    width: 5px;
-    height: 100vh;
-    background-color: white;
-    animation: center-bar .5s ease forwards; }
+  height: 100vh;
+}
+
+.loading .load {
+  width: 50%;
+  height: 100vh;
+  background-color: black;
+}
+
+.loading .left {
+  animation: swipe-left .5s 1s ease forwards;
+}
+
+.loading .right {
+  animation: swipe-right .5s 1s ease forwards;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 5px;
+  height: 100vh;
+  background-color: white;
+  animation: center-bar .5s ease forwards;
+}
 
 @keyframes center-bar {
   from {
-    height: 0; }
+    height: 0;
+  }
   to {
-    height: 100vh; } }
+    height: 100vh;
+  }
+}
 
 @keyframes swipe-left {
   from {
-    transform: translateX(0); }
+    transform: translateX(0);
+  }
   to {
-    transform: translateX(-100%); } }
+    transform: translateX(-100%);
+  }
+}
 
 @keyframes swipe-right {
   from {
-    transform: translateX(0); }
+    transform: translateX(0);
+  }
   to {
-    transform: translateX(100%); } }
+    transform: translateX(100%);
+  }
+}
 
 header .header__top {
   display: flex;
   align-items: center;
   height: 36px;
-  background-color: #003876; }
-  header .header__top .wrap {
-    display: flex;
-    justify-content: flex-end; }
-    header .header__top .wrap .header__top--login {
-      display: flex;
-      justify-content: flex-start;
-      color: white; }
-      header .header__top .wrap .header__top--login li {
-        margin-left: 10px; }
+  background-color: #003876;
+}
+
+header .header__top .wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header .header__top .wrap .header__top--login {
+  display: flex;
+  justify-content: flex-start;
+  color: white;
+}
+
+header .header__top .wrap .header__top--login li {
+  margin-left: 10px;
+  color: white;
+}
 
 header nav {
   position: relative;
-  background-color: #ccccce;
   border-bottom: 1px #ccccce solid;
-  padding: 10px 0; }
-  header nav h1.logo {
-    min-width: 171px;
-    height: 42px;
-    background: url("../images/logo_w.png") no-repeat; }
-    header nav h1.logo a {
-      display: block; }
-      header nav h1.logo a .ir__txt {
-        position: absolute;
-        left: -9999px;
-        top: auto;
-        height: 1px;
-        overflow: hidden; }
-  header nav ul.header__nav > li .header__fullSub {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    background-color: white;
-    border-bottom: 1px #ccccce solid; }
-    header nav ul.header__nav > li .header__fullSub .wrap {
-      display: flex;
-      justify-content: flex-start;
-      border-left: 1px #eaeaec solid;
-      border-right: 1px #eaeaec solid;
-      padding: 50px 20px; }
-      header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub {
-        width: 14%; }
-        header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li > a {
-          color: blue;
-          font-size: 1.8rem; }
-        header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li ul {
-          margin-top: 10px; }
+  padding: 10px 0;
+}
+
+header nav h1.logo {
+  min-width: 171px;
+  height: 52px;
+  margin-right: 200px;
+  background: url("../images/ir_common.png") 0 0 no-repeat;
+}
+
+header nav h1.logo a {
+  display: block;
+}
+
+header nav h1.logo a .ir__txt {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  height: 1px;
+  overflow: hidden;
+}
+
+header nav ul.header__nav {
+  width: 100%;
+}
+
+header nav ul.header__nav > li {
+  width: 20%;
+  text-align: center;
+}
+
+header nav ul.header__nav > li.on .header__fullSub {
+  display: block;
+}
+
+header nav ul.header__nav > li > a {
+  display: block;
+  padding: 15px 0;
+  font-size: 1.8rem;
+}
+
+header nav ul.header__nav > li .header__fullSub {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  margin-top: 1px;
+  background-color: white;
+  border-bottom: 1px #ccccce solid;
+}
+
+header nav ul.header__nav > li .header__fullSub .wrap {
+  display: flex;
+  justify-content: flex-start;
+  border-left: 1px #eaeaec solid;
+  border-right: 1px #eaeaec solid;
+  padding: 50px 20px;
+}
+
+header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub {
+  width: 14%;
+}
+
+header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li > a {
+  color: #0067b3;
+  font-size: 1.8rem;
+}
+
+header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li ul {
+  margin-top: 20px;
+}
+
+header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li ul > li {
+  margin-bottom: 10px;
+}

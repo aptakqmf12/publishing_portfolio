@@ -37,7 +37,7 @@ header{
     }
     nav{ position:relative;  border-bottom: 1px $gray02 solid; padding:10px 0;
         h1.logo{ min-width:171px; height:52px; margin-right:200px; background:url("../images/ir_common.png") 0 0 no-repeat;
-            a{ display: block; 
+            a{ display: block; height:100%;
                 .ir__txt{  position:absolute;  left:-9999px; top:auto; height:1px; overflow:hidden; }
             }
         }
@@ -49,7 +49,7 @@ header{
                 }
                 > a{ display: block; padding:15px 0; font-size:1.8rem}
                 .header__fullSub{ display: none; position:absolute; left:0; top:100%; width:100%; margin-top:1px;  background-color:white; border-bottom:1px $gray02 solid; 
-                    .wrap{ display:flex; justify-content: flex-start; border-left:1px $gray01 solid; border-right:1px $gray01 solid; padding:50px 20px;
+                    .wrap{ position:relative; display:flex; justify-content: flex-start; border-left:1px $gray01 solid; border-right:1px $gray01 solid; padding:50px 20px;
                         ul.header__sub{ width:14%;
                             // 2 depth
                             > li { 
@@ -62,6 +62,7 @@ header{
                                 }
                             }
                         }
+                        .close-btn{ position:absolute; right:0; bottom:0; width:40px; height:40px;  border:none; background-color: $font-color; font-size:2.4rem; color:white; cursor: pointer;}
                     }
                 }
             }

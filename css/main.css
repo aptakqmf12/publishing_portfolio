@@ -60,6 +60,7 @@ html {
 
 body {
   font-size: 1.4rem;
+  font-family: 'NanumBarunGothic', sans-serif;
 }
 
 .flex-between {
@@ -176,6 +177,7 @@ header nav h1.logo {
 
 header nav h1.logo a {
   display: block;
+  height: 100%;
 }
 
 header nav h1.logo a .ir__txt {
@@ -217,6 +219,7 @@ header nav ul.header__nav > li .header__fullSub {
 }
 
 header nav ul.header__nav > li .header__fullSub .wrap {
+  position: relative;
   display: flex;
   justify-content: flex-start;
   border-left: 1px #eaeaec solid;
@@ -239,4 +242,17 @@ header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li ul {
 
 header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li ul > li {
   margin-bottom: 10px;
+}
+
+header nav ul.header__nav > li .header__fullSub .wrap .close-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #0067b3;
+  font-size: 2.4rem;
+  color: white;
+  cursor: pointer;
 }

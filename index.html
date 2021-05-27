@@ -7,12 +7,20 @@
     <title>KTW's PortFolio</title>
     <!-- css -->
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./vendor/node_modules/swiper/swiper.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <!-- script -->
     <script defer src="./js/app.js"></script>
-    <script defer src="./vendor/node_modules/swiper/swiper-bundle.min.js"></script>
+    <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script defer src="./vendor/masonry.pkgd.min.js"></script>
+
     <!-- font -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css">
+
+
+
+
+
 
 </head>
 <body >
@@ -154,7 +162,9 @@
                                         </ul>
                                     </li>
                                 </ul>
-                                <button type="button" class="close-btn" onClick="closeParentTarget.call(this, '.header__fullsub')"> x </button>
+                                
+                                <button type="button" class="close-btn"> x </button>
+
                             </div>
                         </div>
                     </li>
@@ -195,6 +205,7 @@
                                         </ul>
                                     </li>
                                 </ul>
+                                <button type="button" class="close-btn"> x </button>
                             </div>
 
                            
@@ -244,6 +255,7 @@
                                         </ul>
                                     </li>
                                 </ul>
+                                <button type="button" class="close-btn"> x </button>
             
                             </div>
 
@@ -324,10 +336,8 @@
                                         </ul>
                                     </li>
                                 </ul>
-            
+                                <button type="button" class="close-btn"> x </button>
                             </div>
-
-                           
                         </div>
                     </li>
                     <li>
@@ -404,7 +414,7 @@
                                         </ul>
                                     </li>
                                 </ul>
-            
+                                <button type="button" class="close-btn"> x </button>
                             </div>
 
                            
@@ -484,7 +494,7 @@
                                         </ul>
                                     </li>
                                 </ul>
-            
+                                <button type="button" class="close-btn"> x </button>
                             </div>
 
                            
@@ -499,11 +509,74 @@
     </header>
 
     <main role="main">
+        <section class="main__visual">
+            <div class="wrap">
+                <h2>메인 비주얼</h2>
+                <div class="main__visual--swiper swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">1</div>
+                        <div class="swiper-slide">2</div>
+                        <div class="swiper-slide">3</div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="main__gallary">
+            <div class="wrap">
+                <h2>갤러리</h2>
+
+                <div class="grid">
+                    <div class="grid-item"></div>
+                    <div class="grid-item grid-item--width2"></div>
+                    <div class="grid-item grid-item--height2"></div>
+                    
+                </div>
+
+            </div>
+        </section>
 
     </main>
 
     <footer>
        
     </footer>
+
+    <script>
+        // swiper
+        const MainVisualSwiper = new Swiper('.main__visual--swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 3000,
+            },
+
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        });
+
+        //masonry
+        $(function(){
+            var $grid =  $(".grid").masonry({
+                columnWidth: 250
+                , isFitWidth: true
+                , itemSelector: '.grid-item'
+                , percentPosition: false
+            });
+
+
+            $grid.imagesLoaded().progress(function(){ 
+                $grid.masonry('layout');
+            });
+        });
+    </script>
 </body>
 </html>

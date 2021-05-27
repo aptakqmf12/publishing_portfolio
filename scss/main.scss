@@ -33,22 +33,21 @@ header{
                 li{ margin-left:10px; color:white;}
             }
         }
-        
     }
-    nav{ position:relative;  border-bottom: 1px $gray02 solid; padding:10px 0;
-        h1.logo{ min-width:171px; height:52px; margin-right:200px; background:url("../images/ir_common.png") 0 0 no-repeat;
+    nav{ position:relative;  border-bottom: 1px $gray02 solid;
+        h1.logo{ min-width:171px; height:52px; margin-right:200px; background:url("../images/ir_common.png") 0 5px no-repeat;
             a{ display: block; height:100%;
                 .ir__txt{  position:absolute;  left:-9999px; top:auto; height:1px; overflow:hidden; }
             }
         }
         ul.header__nav{  width:100%;
             // 1 depth
-            > li{ width:20%; text-align: center;
-                &.on{
+            > li{ width:20%; margin:0 20px; text-align: center;
+                &.on{ border-bottom:1px $main-color solid;
                     .header__fullSub{ display: block;;}
                 }
-                > a{ display: block; padding:15px 0; font-size:1.8rem}
-                .header__fullSub{ display: none; position:absolute; left:0; top:100%; width:100%; margin-top:1px;  background-color:white; border-bottom:1px $gray02 solid; 
+                > a{ display: block; padding:30px 0; font-size:1.8rem}
+                .header__fullSub{ display: none; position:absolute; left:0; top:100%; width:100%; margin-top:1px;  background-color:white; border-bottom:1px $gray02 solid;  z-index:1;
                     .wrap{ position:relative; display:flex; justify-content: flex-start; border-left:1px $gray01 solid; border-right:1px $gray01 solid; padding:50px 20px;
                         ul.header__sub{ width:14%;
                             // 2 depth
@@ -56,8 +55,10 @@ header{
                                 > a{ color:$font-color; font-size:1.8rem; }
                                 ul{ margin-top:20px;
                                     // 3 depth
-                                    > li{ margin-bottom:10px;
-                                        > a{}
+                                    > li{ margin-bottom:15px;
+                                        > a{ cursor: pointer;
+                                            &:hover{ text-decoration: underline; color:$font-color}
+                                        }
                                     }
                                 }
                             }
@@ -68,6 +69,30 @@ header{
             }
         }
     }
-        
-    
 }
+
+main{
+    section{ margin-bottom:50px; padding: 30px 0;} //section공통
+
+    .main__visual{
+        &--swiper{ 
+            
+        }
+    }
+    .main__gallary{
+
+    }
+
+
+}
+
+
+.grid-item {
+    float: left;
+    width: 80px;
+    height: 60px;
+    border: 2px solid hsla(0, 0%, 0%, 0.5);
+  }
+  
+  .grid-item--width2 { width: 160px; }
+  .grid-item--height2 { height: 140px; }

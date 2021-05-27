@@ -165,14 +165,13 @@ header .header__top .wrap .header__top--login li {
 header nav {
   position: relative;
   border-bottom: 1px #ccccce solid;
-  padding: 10px 0;
 }
 
 header nav h1.logo {
   min-width: 171px;
   height: 52px;
   margin-right: 200px;
-  background: url("../images/ir_common.png") 0 0 no-repeat;
+  background: url("../images/ir_common.png") 0 5px no-repeat;
 }
 
 header nav h1.logo a {
@@ -194,7 +193,12 @@ header nav ul.header__nav {
 
 header nav ul.header__nav > li {
   width: 20%;
+  margin: 0 20px;
   text-align: center;
+}
+
+header nav ul.header__nav > li.on {
+  border-bottom: 1px #003876 solid;
 }
 
 header nav ul.header__nav > li.on .header__fullSub {
@@ -203,7 +207,7 @@ header nav ul.header__nav > li.on .header__fullSub {
 
 header nav ul.header__nav > li > a {
   display: block;
-  padding: 15px 0;
+  padding: 30px 0;
   font-size: 1.8rem;
 }
 
@@ -241,7 +245,16 @@ header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li ul {
 }
 
 header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li ul > li {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li ul > li > a {
+  cursor: pointer;
+}
+
+header nav ul.header__nav > li .header__fullSub .wrap ul.header__sub > li ul > li > a:hover {
+  text-decoration: underline;
+  color: #0067b3;
 }
 
 header nav ul.header__nav > li .header__fullSub .wrap .close-btn {
@@ -255,4 +268,24 @@ header nav ul.header__nav > li .header__fullSub .wrap .close-btn {
   font-size: 2.4rem;
   color: white;
   cursor: pointer;
+}
+
+main section {
+  margin-bottom: 50px;
+  padding: 30px 0;
+}
+
+.grid-item {
+  float: left;
+  width: 80px;
+  height: 60px;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.grid-item--width2 {
+  width: 160px;
+}
+
+.grid-item--height2 {
+  height: 140px;
 }

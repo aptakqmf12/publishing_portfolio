@@ -1,23 +1,22 @@
 html {
-  font-size: 10px;
-}
+  font-size: 10px; }
 
 body {
   font-size: 1.4rem;
-  font-family: 'NanumBarunGothic', sans-serif;
-}
+  font-family: 'NanumBarunGothic', sans-serif; }
 
 .flex-between {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
+  align-items: center; }
 
 .wrap {
   width: 1280px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
+  @media (max-width: 1024px) {
+    .wrap {
+      width: 100%;
+      padding: 0 20px; } }
 
 .hide {
-  display: none;
-}
+  display: none; }

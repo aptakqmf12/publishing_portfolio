@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KTW's PortFolio</title>
+
     <!-- css -->
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!-- script -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./vendor/masonry.pkgd.min.js"></script>
     <script defer src="./js/app.js"></script>
-    <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script defer src="./vendor/masonry.pkgd.min.js"></script>
 
     <!-- font -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css">
@@ -23,8 +25,8 @@
 
 
 </head>
-<body >
-    <div class="loading flex-between hide">
+<body>
+    <div class="loading flex-between ">
         <div class="load left"></div>
         <div class="load right"></div>
     </div>
@@ -163,7 +165,7 @@
                                     </li>
                                 </ul>
                                 
-                                <button type="button" class="close-btn"> x </button>
+                                <button type="button" class="close-btn"> foo </button>
 
                             </div>
                         </div>
@@ -510,17 +512,43 @@
 
     <main role="main">
         <section class="main__visual">
-            <div class="wrap">
-                <h2>메인 비주얼</h2>
+            
+                <h2></h2>
                 <div class="main__visual--swiper swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">1</div>
-                        <div class="swiper-slide">2</div>
-                        <div class="swiper-slide">3</div>
+                        <div class="main__visual--slide swiper-slide">
+                            <img src="./images/main_visual01.jpg" alt="mainVisual">
+                            <div class="visual__text">
+                                <h3 class="visual__text--slogan">진짜 에어팟 주는데?</h3>
+                                <p class="visual__text--content">
+                                    아직도 퀴즈 안풀었어요?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="main__visual--slide swiper-slide">
+                            <img src="./images/main_visual02.png" alt="mainVisual">
+                            <div class="visual__text">
+                                <h3 class="visual__text--slogan">진짜 에어팟 주는데?</h3>
+                                <p class="visual__text--content">
+                                    아직도 퀴즈 안풀었어요?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="main__visual--slide swiper-slide">
+                            <img src="./images/main_visual03.png" alt="mainVisual">
+                            <div class="visual__text">
+                                <h3 class="visual__text--slogan">진짜 에어팟 주는데?</h3>
+                                <p class="visual__text--content">
+                                    아직도 퀴즈 안풀었어요?
+                                </p>
+                            </div>
+                        </div>
+       
+
                     </div>
                 </div>
-                
-            </div>
+
+           
         </section>
 
         <section class="main__gallary">
@@ -528,11 +556,20 @@
                 <h2>갤러리</h2>
 
                 <div class="grid">
-                    <div class="grid-item"></div>
-                    <div class="grid-item grid-item--width2"></div>
-                    <div class="grid-item grid-item--height2"></div>
-                    
+                    <div class="grid-item"><img src="./images/g01.jpg" alt="gallaryImg" /></div>
+                    <div class="grid-item"><img src="./images/g04.jpg" alt="gallaryImg" /></div>
+                    <div class="grid-item"><img src="./images/g02.jpg" alt="gallaryImg" /></div>
+                    <div class="grid-item"><img src="./images/g03.jpg" alt="gallaryImg" /></div>
+                    <div class="grid-item"><img src="./images/g05.jpg" alt="gallaryImg" /></div>
+                    <div class="grid-item"><img src="./images/g06.jpg" alt="gallaryImg" /></div>
+                    <div class="grid-item"><img src="./images/g07.jpg" alt="gallaryImg" /></div>
+                    <div class="grid-item"><img src="./images/g08.jpg" alt="gallaryImg" /></div>
+                    <div class="grid-item"><img src="./images/g09.jpg" alt="gallaryImg" /></div>
+                    <div class="grid-item"><img src="./images/g10.jpg" alt="gallaryImg" /></div>
                 </div>
+                    
+
+
 
             </div>
         </section>
@@ -549,7 +586,7 @@
             direction: 'horizontal',
             loop: true,
             autoplay: {
-                delay: 3000,
+                delay: 10000,
             },
 
             pagination: {
@@ -563,20 +600,16 @@
 
         });
 
-        //masonry
-        $(function(){
-            var $grid =  $(".grid").masonry({
-                columnWidth: 250
-                , isFitWidth: true
-                , itemSelector: '.grid-item'
-                , percentPosition: false
-            });
-
-
-            $grid.imagesLoaded().progress(function(){ 
-                $grid.masonry('layout');
+        // masonry
+        jQuery(document).ready(function () {
+            jQuery(".grid").masonry({
+                itemSelector : ".item"
+                , columnWidth : 110
             });
         });
+
+
+
     </script>
 </body>
 </html>

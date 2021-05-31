@@ -58,8 +58,12 @@ function closeParentTarget(parentClassName){
   let loadingBox = qs('.loading');
   let loading = qs('.loading .left');
 
+  loadingBox.addEventListener('animationstart', ()=> {
+      qs('body').style.position = 'fixed'
+  })
   loading.addEventListener('animationend', ()=> {
       loadingBox.classList.add('hide');
+      qs('body').style.position = 'static'
   })
 
   //nav 클릭시
@@ -82,6 +86,4 @@ function closeParentTarget(parentClassName){
       target.closest('li').classList.remove('on');
     })
   })
-
-
 

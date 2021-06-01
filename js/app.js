@@ -30,7 +30,7 @@ const closest = (startEl, selector) => {
 
   return currentEl;
 }
-function siblings (el, className) {
+function siblingsRemoveClass (el, className) {
   let cs = el.nextElementSibling;
 
   while(cs){ // 만약 다음 형제요소가 있으면
@@ -49,10 +49,6 @@ function closeParentTarget(parentClassName){
   this.closest(parentClassName).closest('li').classList.remove('on') 
 }
 
-
-
-
-
   // loading박스
   let isAnimation = true;
   let loadingBox = qs('.loading');
@@ -66,24 +62,24 @@ function closeParentTarget(parentClassName){
       qs('body').style.position = 'static'
   })
 
+
   //nav 클릭시
-  let NavList = qs('.header__nav > li', 'array');
-
-  NavList.forEach( v => {
-      v.addEventListener('click', ()=>{
-        v.classList.add('on')
-        siblings(v, 'on')
-
-      })
-  } )
-
-  let NavCloseBtns = qs('.header__fullSub .close-btn', 'array');
-
+  const NavList = qs('.header__nav > li', 'array');
+  const NavListA = qs('.header__nav > li > a', 'array');
+  const NavCloseBtns = qs('.header__fullSub .close-btn', 'array');
+  // 1뎁스 클릭시 2뎁스 노출
+  NavList.forEach( v => { 
+    v.addEventListener('click', (e)=>{
+      v.classList.add('on') 
+      siblingsRemoveClass(v, 'on') 
+    })
+  })
+  //close버튼 클릭시 2뎁스 삭제
   NavCloseBtns.forEach( v => {
     v.addEventListener('click', e => {
-      e.preventDefault
-      let target = e.target;
+      const target = e.target; 
       target.closest('li').classList.remove('on');
+      e.stopPropagation();
     })
   })
 

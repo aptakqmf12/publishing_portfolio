@@ -11,9 +11,11 @@ body {
   align-items: center; }
 
 .wrap {
-  width: 1280px;
+  max-width: 1280px;
+  width: 100%;
+  overflow: hidden;
   margin: 0 auto; }
-  @media (max-width: 1024px) {
+  @media (max-width: 1280px) {
     .wrap {
       width: 100%;
       padding: 0 20px; } }

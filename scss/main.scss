@@ -8,7 +8,7 @@
 //Mobile
 
 
-.loading{  position:absolute; overflow:hidden;  width:100vw; height:100vh; z-index:10;
+.loading{ display: none;  position:absolute; overflow:hidden;  width:100vw; height:100vh; z-index:10;
     .load{ width:50%; height:100vh; background-color: black; }
     .left{ animation: swipe-left .5s 1s ease forwards;  }
     .right{ animation: swipe-right .5s 1s ease forwards;  }
@@ -27,12 +27,9 @@
         from{ transform : translateX(0); }
         to{ transform : translateX(100%);}
     }
-
-
 }
 
 header{
-    @include tablet{ display: none;}
     .header__top{ display: flex; align-items: center; height:36px; background-color: $main-color;
         .wrap{ display: flex; justify-content: flex-end;
             .header__top--login{ display: flex; justify-content: flex-start; color:white;
@@ -73,13 +70,40 @@ header{
                     }
                 }
             }
+            @include tablet{  position:absolute; left:0;
+                // 1 depth
+                > li{ 
+                    &.on{ 
+                        .header__fullSub{ }
+                    }
+                    > a{ }
+                    .header__fullSub{ 
+                        .wrap{ 
+                            ul.header__sub{ 
+                                // 2 depth
+                                > li { 
+                                    > a{ }
+                                    ul{ 
+                                        // 3 depth
+                                        > li{ 
+                                            > a{ 
+                                                &:hover{ }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .close-btn{ position:absolute; right:0; bottom:0; width:40px; height:40px;  border:none; background-color: $font-color; font-size:2.4rem; color:white; cursor: pointer;}
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 main{
     section{ margin-bottom:50px;} //section공통
-
     .main__visual{ width:100%; 
         .main__visual--swiper{  max-height:100vh;
             .swiper-wrapper{
@@ -99,10 +123,10 @@ main{
     .main__gallary{
 
     }
-
-
 }
 
+
+// masonry css
 .grid::after{ content:""; display:block; clear:both;}
 .grid-item {
     float: left;

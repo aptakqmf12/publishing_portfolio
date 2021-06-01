@@ -20,8 +20,9 @@ time, mark, audio, video {
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+footer, header, hgroup, menu, nav, section, div {
+  display: block;
+  box-sizing: border-box; }
 
 body {
   line-height: 1; }
@@ -58,9 +59,11 @@ body {
   align-items: center; }
 
 .wrap {
-  width: 1280px;
+  max-width: 1280px;
+  width: 100%;
+  overflow: hidden;
   margin: 0 auto; }
-  @media (max-width: 1024px) {
+  @media (max-width: 1280px) {
     .wrap {
       width: 100%;
       padding: 0 20px; } }
@@ -69,6 +72,7 @@ body {
   display: none; }
 
 .loading {
+  display: none;
   position: absolute;
   overflow: hidden;
   width: 100vw;
@@ -115,10 +119,6 @@ body {
     transform: translateX(0); }
   to {
     transform: translateX(100%); } }
-
-@media (max-width: 1024px) {
-  header {
-    display: none; } }
 
 header .header__top {
   display: flex;
@@ -209,6 +209,21 @@ header nav {
             font-size: 2.4rem;
             color: white;
             cursor: pointer; }
+    @media (max-width: 1280px) {
+      header nav ul.header__nav {
+        position: absolute;
+        left: 0; }
+        header nav ul.header__nav > li .header__fullSub .wrap .close-btn {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 40px;
+          height: 40px;
+          border: none;
+          background-color: #0067b3;
+          font-size: 2.4rem;
+          color: white;
+          cursor: pointer; } }
 
 main section {
   margin-bottom: 50px; }

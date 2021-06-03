@@ -65,21 +65,42 @@ function closeParentTarget(parentClassName){
 
   //nav 클릭시
   const NavList = qs('.header__nav > li', 'array');
-  const NavListA = qs('.header__nav > li > a', 'array');
   const NavCloseBtns = qs('.header__fullSub .close-btn', 'array');
   // 1뎁스 클릭시 2뎁스 노출
   NavList.forEach( v => { 
-    v.addEventListener('click', (e)=>{
+    v.addEventListener('click', ()=>{
       v.classList.add('on') 
       siblingsRemoveClass(v, 'on') 
     })
   })
   //close버튼 클릭시 2뎁스 삭제
   NavCloseBtns.forEach( v => {
-    v.addEventListener('click', e => {
+    v.addEventListener('click', (e) => {
       const target = e.target; 
       target.closest('li').classList.remove('on');
       e.stopPropagation();
     })
   })
 
+//2뎁스 클릭시 1뎁스 노출
+const NavSubList = qs('.header__sub > li', 'array');
+console.log(NavSubList);
+NavSubList.forEach( v => {
+  v.addEventListener('click', (e)=>{
+    
+    // 2뎁스 클릭시 3렙스 토글
+    v.classList.toggle('on')
+
+    // 클릭한 li의 부모 .header__sub 중에서 해당 li를 포함하지않은 .header__sub의 자식 li는 모두 on삭제
+    
+    const headerSubs = v.closest('.wrap').querySelectorAll('.header__sub')
+
+    headerSubs.forEach( sub => {
+      if(sub !== v.closest('.header__sub')){
+        sub.querySelector('li').classList.remove('on')
+      }
+    })
+    e.stopPropagation();
+
+  })
+})
